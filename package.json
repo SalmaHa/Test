@@ -1,12 +1,13 @@
 {
   "name": "Test",
-  "homepage": "http://SalmaHa.github.io/Test",
+  "homepage": "https://SalmaHa.github.io/Test",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server --mode=development --open --hot",
-    "build": "webpack --mode=production",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --mode=production"
   },
   "author": "Salma Hamido",
   "dependencies": {
