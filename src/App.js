@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Card from './components/Card';
 import LottieSuccess from './components/LottieSuccess';
 import Input from './components/Inputs';
+import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 import { isNotEmpty } from './shared/utility';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 //#endregion
@@ -12,6 +14,7 @@ import { BsFillCheckCircleFill } from 'react-icons/bs';
 const App = () => {
 
    //#region state
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
    const [blockingStep2,setblockingStep2] = useState(true)
    const [blockingStep3,setBlockingStep3] = useState(true)
    const [stateSummary,setStateSummary] = useState({})
@@ -89,7 +92,9 @@ const App = () => {
          <Header />
          <div className="hero-body">
                <div className="columns has-hero-style">
-                  <Card blocking={false} stepName='Step 1' cardColor='green-light'>
+                  {!isLoggedIn && <LoginForm onLogin={() => setIsLoggedIn(true)} />}
+                  {!isLoggedIn && <RegistrationForm onRegister={() => setIsLoggedIn(true)} />}
+                  {isLoggedIn && <Card blocking={false} stepName='Step 1' cardColor='green-light'>}
                     
                      <Input name='numPeople' 
                             inputType='dropdown' 
