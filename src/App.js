@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Card from './components/Card';
 import LottieSuccess from './components/LottieSuccess';
 import Input from './components/Inputs';
+import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 import { isNotEmpty } from './shared/utility';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 //#endregion
